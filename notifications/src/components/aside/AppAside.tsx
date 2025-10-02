@@ -1,7 +1,7 @@
-import { appNavigation } from '@/app/constants/aside-nav'
+import { appNavigation } from '@/constants/aside-nav'
 
-import NavAside from '@/app/components/navigation/NavAside'
-import UserHeaderInfo from '@/app/components/user/UserHeaderInfo'
+import NavAside from '@/components/navigation/NavAside'
+import UserHeaderInfo from '@/components/user/UserHeaderInfo'
 
 import styles from './styles/aside.module.css'
 

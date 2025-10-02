@@ -1,6 +1,6 @@
 'use client';
 
-import AppAside from '@/app/components/aside/AppAside';
+import AppAside from '@/components/aside/AppAside';
 
 import styles from './styles/app-layout.module.css'
 
