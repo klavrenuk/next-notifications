@@ -1,0 +1,15 @@
+.navAside {
+    width: 100%;
+    padding-left: 85px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.link {
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}

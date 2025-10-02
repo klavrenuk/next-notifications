@@ -1,0 +1,6 @@
+.aside {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--color-grey);
+    height: 100vh;
+}
