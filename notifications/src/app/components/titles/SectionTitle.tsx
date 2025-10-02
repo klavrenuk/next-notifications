@@ -1,9 +1,13 @@
 import styles from './styles/section-title.module.css'
 
-export default function SectionTitle() {
+interface Props {
+    text: string
+}
+
+export default function SectionTitle({text}: Props) {
     return (
         <h2 className={styles.title}>
-            Page title
+            { text }
         </h2>
     )
 }
