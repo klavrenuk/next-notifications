@@ -1,6 +1,5 @@
 .navAside {
     width: 100%;
-    padding-left: 85px;
     display: flex;
     flex-direction: column;
     gap: 4px;

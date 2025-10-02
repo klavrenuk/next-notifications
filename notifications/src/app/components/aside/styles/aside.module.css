@@ -3,4 +3,8 @@
     overflow-x: hidden;
     background: var(--color-grey);
     height: 100vh;
+    padding-left: 85px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }

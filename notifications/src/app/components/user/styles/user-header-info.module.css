@@ -1,0 +1,15 @@
+.userHeaderInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.photo {
+    border-radius: 100%;
+}
+
+.points {
+    color: var(--color-black);
+    font-size: 12px;
+    font-weight: 700;
+}
