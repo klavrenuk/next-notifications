@@ -5,9 +5,10 @@ import SectionTitle from "@/components/titles/SectionTitle";
 import NavPage from "@/components/navigation/NavPage";
 import Empty from "@/components/empty/Empty";
 import PageSection from "@/components/page-section/PageSection";
+import NotificationCard from '@/components/notification/NotificationCard';
+
 import type { Nav } from '@/types/nav';
 
-// Тип для уведомления (адаптируйте при необходимости)
 interface NotificationItem {
   type: string;
   text: string;
@@ -31,6 +32,8 @@ export default function Notifications() {
         const res = await fetch('/api/notifications');
         if (!res.ok) throw new Error('Ошибка сети');
         const data = await res.json();
+        console.log('data', data.results)
+
         setNotifications(data.results || []);
       } catch (error) {
         console.error('Ошибка загрузки:', error);
@@ -53,10 +56,8 @@ export default function Notifications() {
       ) : notifications.length > 0 ? (
 
         <div className="">
-          {notifications.map((item, index) => (
-            <div>
-              NotificationCard
-            </div>
+          {notifications.map((notification) => (
+            <NotificationCard notification={notification} key={notification.created} />
           ))}
         </div>
       ) : (
