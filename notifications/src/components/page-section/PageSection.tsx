@@ -1,0 +1,21 @@
+import { ReactNode } from 'react';
+
+import styles from './styles/page-section.module.css'
+
+interface Props {
+  header: ReactNode;
+  children: ReactNode;
+}
+
+export default function PageSection({header, children}: Props) {
+    return (
+        <div className={styles.section}>
+            <header className={styles.header}>
+                { header }
+            </header>
+            <div className={styles.content}>
+                { children }
+            </div>
+        </div>
+    )
+}

@@ -1,0 +1,13 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header {
+    padding: 0 16px;
+}
+
+.content {
+    padding: 16px 0;
+}
