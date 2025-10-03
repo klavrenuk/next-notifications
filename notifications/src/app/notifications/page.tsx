@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { observer } from 'mobx-react-lite';
+import { notificationsStore } from '@/store/notifications';
 
 import NavPage from "@/components/navigation/NavPage";
+import Modal from "@/components/modal/Modal";
 import Empty from "@/components/empty/Empty";
 import PageSection from "@/components/page-section/PageSection";
 import NotificationCard from "@/components/notification/NotificationCard";
@@ -14,7 +17,7 @@ import type { Notification } from "@/types/notifications";
 
 import styles from "@/styles/notification.module.scss";
 
-export default function Notifications() {
+export default observer(function Notifications() {
   const navList: Nav[] = [
     { url: "all", name: "Все" },
     { url: "general", name: "Общее" },
@@ -25,7 +28,7 @@ export default function Notifications() {
   const [loading, setLoading] = useState(true);
   const [activeView, setActiveView] = useState(navList[0].url);
 
-  
+  const { isShowModalDelete } = notificationsStore;
 
   const fetchNotifications = async () => {
     try {
@@ -44,6 +47,14 @@ export default function Notifications() {
       setLoading(false);
     }
   };
+
+  const handleModalAccept = () => {
+    notificationsStore.closeModalDelete()
+  }
+
+  const handleModalClose = () => {
+    notificationsStore.closeModalDelete()
+  }
 
   useEffect(() => {
     fetchNotifications();
@@ -72,6 +83,15 @@ export default function Notifications() {
       ) : (
         <Empty />
       )}
+
+      <Modal
+          isOpen={isShowModalDelete}
+          title="Удалить все оповещения"
+          onAccept={handleModalAccept}
+          onClose={handleModalClose}
+      >
+        <div>remove Modal</div>
+      </Modal>
     </PageSection>
   );
-}
+})

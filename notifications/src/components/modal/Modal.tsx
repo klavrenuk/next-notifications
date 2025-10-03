@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
-import styles from './styles/modal.modules.scss'
+import styles from './styles/modal.module.scss'
 
 interface ModalProps {
   isOpen: boolean;
@@ -43,6 +43,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
 
   return createPortal(
     <div className={styles.overlay} onClick={handleClickOutside} role="dialog" aria-modal="true">
+      Inner
       <div ref={modalRef} className={styles.content}>
         {title && (
           <div className={styles.header}>
