@@ -1,3 +1,5 @@
+import { asideStore } from '@/store/aside';
+
 import Image from 'next/image';
 
 import UserHeaderInfo from '@/components/user/UserHeaderInfo'
@@ -5,10 +7,14 @@ import UserHeaderInfo from '@/components/user/UserHeaderInfo'
 import styles from './styles/app-header-mobile.module.scss'
 
 export default function AppHeaderMobile() {
+    const handleShowAside = () => {
+        asideStore.openMobileAside()
+    }
+
     return (
         <div className={styles.appHeaderMobile}>
             <div className={styles.blockUser}>
-                <button className={styles.btnIcon}>
+                <button className={styles.btnIcon} onClick={handleShowAside}>
                     <Image
                         src={"/icon/icon-burger.svg"}
                         alt={""}
