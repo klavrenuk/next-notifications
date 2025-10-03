@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SectionTitle from "@/components/titles/SectionTitle";
+
 import NavPage from "@/components/navigation/NavPage";
 import Empty from "@/components/empty/Empty";
 import PageSection from "@/components/page-section/PageSection";
 import NotificationCard from "@/components/notification/NotificationCard";
 import AppLoader from "@/components/loader/AppLoader";
+import PageNotificationsHead from "@/components/page-notifications/PageNotificationsHead";
 
 import type { Nav } from "@/types/nav";
 
@@ -30,7 +31,7 @@ export default function Notifications() {
   const [loading, setLoading] = useState(true);
   const [activeView, setActiveView] = useState(navList[0].url);
 
-  const title = <SectionTitle text="Уведомления" />;
+  
 
   const fetchNotifications = async () => {
     try {
@@ -61,7 +62,7 @@ export default function Notifications() {
   };
 
   return (
-    <PageSection header={title}>
+    <PageSection header={<PageNotificationsHead />}>
       <NavPage list={navList} active={activeView} update={handleUpdateView} />
 
       {loading ? (

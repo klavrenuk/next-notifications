@@ -1,5 +1,7 @@
 import { formatRelativeTime } from '@/utils/date'
 
+import Image from 'next/image';
+
 import type { Notification } from "@/types/notifications";
 
 import UserAvatar from "@/components/user/UserAvatar";
@@ -29,6 +31,7 @@ export default function NotificationCard({ notification }: Props) {
         {notification.image && (
           <img className={styles.rightImg} src={notification.image} alt="" width={40} height={40} />
         )}
+        <Image src={'/icon/icon-dots.svg'} alt="" height={20} width={20} />
       </div>
     </div>
   );

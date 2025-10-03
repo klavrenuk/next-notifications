@@ -1,4 +1,4 @@
-import type { Nav } from '@/app/types/nav';
+import type { Nav } from '@/types/nav';
 import { usePathname } from 'next/navigation';
 
 import Link from 'next/link';
