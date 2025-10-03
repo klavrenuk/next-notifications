@@ -1,5 +1,6 @@
+import { formatRelativeTime } from '@/utils/date'
+
 import type { Notification } from "@/types/notifications";
-import Image from "next/image";
 
 import UserAvatar from "@/components/user/UserAvatar";
 
@@ -12,21 +13,21 @@ interface Props {
 export default function NotificationCard({ notification }: Props) {
   return (
     <div className={styles.notification}>
-      <div>
+      <div className={styles.blockLeft}>
         <UserAvatar user={notification.user} />
 
         <div>
-          <div>
-            <h6>{notification.user.name}</h6>
-            <p>опубликовал новый пост, коллекцию спайстори</p>
+          <div className={styles.userInfo}>
+            <h6 className={styles.name}>{notification.user.name}</h6>
+            <p className={styles.description}>опубликовал новый пост, коллекцию спайстори</p>
           </div>
-          <div>{notification.created}</div>
+          <div className={styles.time}>{formatRelativeTime(notification.created)}</div>
         </div>
       </div>
 
-      <div>
+      <div className={styles.blockRigth}>
         {notification.image && (
-          <img src={notification.image} alt="" width={40} height={40} />
+          <img className={styles.rightImg} src={notification.image} alt="" width={40} height={40} />
         )}
       </div>
     </div>

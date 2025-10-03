@@ -9,6 +9,8 @@ import NotificationCard from '@/components/notification/NotificationCard';
 
 import type { Nav } from '@/types/nav';
 
+import styles from '@/styles/notification.module.css'
+
 interface NotificationItem {
   type: string;
   text: string;
@@ -55,7 +57,7 @@ export default function Notifications() {
         <p>Загрузка...</p>
       ) : notifications.length > 0 ? (
 
-        <div className="">
+        <div className={styles.list}>
           {notifications.map((notification) => (
             <NotificationCard notification={notification} key={notification.created} />
           ))}

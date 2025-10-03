@@ -1,0 +1,48 @@
+.notification {
+    display: grid;
+    grid-template-columns: auto 100px;
+    gap: 16px;
+    padding: 16px;
+    border-bottom: 1px solid var(--color-grey1);
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 20px;
+}
+
+.name,
+.description {
+    font-size: 14px;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.description {
+    line-height: 20px;
+}
+
+.time {
+    color: var(--color-grey-black);
+    font-size: 12px;
+}
+
+.blockLeft {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.blockRigth {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.rightImg {
+    border-radius: 4px;
+}
