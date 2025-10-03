@@ -1,0 +1,12 @@
+.notificationCounter {
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 16px;
+    padding: 3px 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-red);
+    height: 24px;
+}

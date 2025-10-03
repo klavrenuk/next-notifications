@@ -1,0 +1,24 @@
+.navPage {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-grey1);
+    margin-bottom: 16px;
+}
+
+.navPageLink,
+.navPageLinkActive {
+    padding-bottom: 8px;
+    font-size: 16px;
+    border-bottom: 4px solid transparent;
+
+    &:hover,
+    &:active {
+        font-weight: 700;
+        border-bottom: 4px solid var(--color-purple);
+    }
+}
+
+.navPageLinkActive {
+    border-bottom: 4px solid var(--color-purple);
+}

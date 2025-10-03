@@ -1,0 +1,17 @@
+.aside {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--color-grey);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 10px 10px 10px 85px;
+}
+
+.asideContainer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+}

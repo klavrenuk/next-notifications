@@ -1,0 +1,27 @@
+.userAvatar,
+.avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.online {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    height: 8px;
+    width: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 100%;
+
+    & span {
+        height: 6px;
+        width: 6px;
+        background: #3FB961;
+        border-radius: 100%;
+    }
+}
