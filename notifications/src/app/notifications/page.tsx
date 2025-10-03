@@ -6,6 +6,7 @@ import NavPage from "@/components/navigation/NavPage";
 import Empty from "@/components/empty/Empty";
 import PageSection from "@/components/page-section/PageSection";
 import NotificationCard from "@/components/notification/NotificationCard";
+import AppLoader from "@/components/loader/AppLoader";
 
 import type { Nav } from "@/types/nav";
 
@@ -64,7 +65,7 @@ export default function Notifications() {
       <NavPage list={navList} active={activeView} update={handleUpdateView} />
 
       {loading ? (
-        <p>Загрузка...</p>
+        <AppLoader />
       ) : notifications.length > 0 ? (
         <div className={styles.list}>
           {notifications.map((notification) => (
