@@ -47,7 +47,7 @@ export default function Notifications() {
       console.error("Ошибка загрузки:", error);
 
     } finally {
-      setLoading(false);
+      //setLoading(false);
     }
   };
 

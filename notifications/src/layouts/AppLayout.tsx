@@ -22,7 +22,7 @@ export default observer(function AppLayout({ children }: { children: React.React
       { isDesktop && <AppAside /> }
       { isMobile && <AppHeaderMobile /> }
 
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
 
       { isMobile && isOpenMobileAside && <AppAsideMobile />}
     </div>
