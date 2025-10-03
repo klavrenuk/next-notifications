@@ -13,3 +13,9 @@
     font-size: 12px;
     font-weight: 700;
 }
+
+.userAdvantages {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
