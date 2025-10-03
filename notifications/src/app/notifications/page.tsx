@@ -48,7 +48,6 @@ export default function Notifications() {
 
     } finally {
       setLoading(false);
-      setLoading(false)
     }
   };
 

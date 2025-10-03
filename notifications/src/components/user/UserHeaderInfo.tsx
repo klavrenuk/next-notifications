@@ -9,7 +9,7 @@ export default function UserHeaderInfo() {
         <div className={styles.userHeaderInfo}>
             <Image
                 src="/img/user-alina.png"
-                alt="Алина"
+                alt=""
                 width={40}
                 height={40}
                 className={styles.photo}
