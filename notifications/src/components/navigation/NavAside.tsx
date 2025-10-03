@@ -1,4 +1,5 @@
 import type { Nav } from '@/app/types/nav';
+import { usePathname } from 'next/navigation';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,22 +13,28 @@ interface Props {
 }
 
 export default function NavAside({ list }: Props) {
+  const pathname = usePathname();
+
   return (
     <nav className={styles.navAside}>
-      {list.map((link) => (
-        <Link
-          key={link.url}
-          href={link.url}
-          className={styles.link}
-        >
+       {list.map((link) => {
+        const isActive = pathname === link.url;
+
+        return (
+          <Link
+            key={link.url}
+            href={link.url}
+            className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
+          >
             <Image src={link.icon} alt="" width={24} height={24} />
-            <span>{link.name}</span>
-            
-            {
-              link.url === '/messages' && <NotificationCounter count="4" />
-            }
-        </Link>
-      ))}
+
+            <div className={styles.linkInfo}>
+              <span className={styles.linkName}>{link.name}</span>
+              {link.url === '/messages' && <NotificationCounter count="4" />}
+            </div>
+          </Link>
+        );
+      })}
     </nav>
   );
 }

@@ -8,4 +8,5 @@
     align-items: center;
     justify-content: center;
     background: var(--color-red);
+    height: 24px;
 }
