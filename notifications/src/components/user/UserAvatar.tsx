@@ -1,6 +1,6 @@
 import type { User } from "@/types/notifications";
 
-import styles from "./styles/user-avatar.module.css";
+import styles from "./styles/user-avatar.module.scss";
 
 interface Props {
   user: User;

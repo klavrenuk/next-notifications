@@ -1,4 +1,4 @@
-import styles from './styles/app-loader.module.css'
+import styles from './styles/app-loader.module.scss'
 
 export default function AppLoader() {
     return (

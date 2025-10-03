@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import styles from './styles/page-section.module.css'
+import styles from './styles/page-section.module.scss'
 
 interface Props {
   header: ReactNode;

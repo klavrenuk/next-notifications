@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import type { Nav } from '@/types/nav'
 
-import styles from './styles/nav-page.module.css'
+import styles from './styles/nav-page.module.scss'
 
 interface Props {
     list: Nav[],

@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import NotificationCounter from '@/components/notification/NotificationCounter'
 
-import styles from './styles/nav-aside.module.css';
+import styles from './styles/nav-aside.module.scss';
 
 interface Props {
   list: Nav[];

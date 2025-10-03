@@ -6,7 +6,7 @@ import type { Notification } from "@/types/notifications";
 
 import UserAvatar from "@/components/user/UserAvatar";
 
-import styles from "./styles/notification-card.module.css";
+import styles from "./styles/notification-card.module.scss";
 
 interface Props {
   notification: Notification;

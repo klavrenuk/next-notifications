@@ -1,4 +1,4 @@
-import styles from './styles/section-title.module.css'
+import styles from './styles/section-title.module.scss'
 
 interface Props {
     text: string

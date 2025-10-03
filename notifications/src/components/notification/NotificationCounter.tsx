@@ -1,4 +1,4 @@
-import styles from './styles/notification-counter.module.css'
+import styles from './styles/notification-counter.module.scss'
 
 interface Props {
     count: number | string

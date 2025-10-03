@@ -1,4 +1,4 @@
-import styles from './styles/empty.module.css'
+import styles from './styles/empty.module.scss'
 
 import Image from 'next/image';
 

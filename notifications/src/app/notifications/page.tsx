@@ -11,7 +11,7 @@ import PageNotificationsHead from "@/components/page-notifications/PageNotificat
 
 import type { Nav } from "@/types/nav";
 
-import styles from "@/styles/notification.module.css";
+import styles from "@/styles/notification.module.scss";
 
 interface NotificationItem {
   type: string;

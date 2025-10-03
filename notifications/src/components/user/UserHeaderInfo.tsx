@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import styles from './styles/user-header-info.module.css'
+import styles from './styles/user-header-info.module.scss'
 
 export default function UserHeaderInfo() {
     const points = '560,000,690'

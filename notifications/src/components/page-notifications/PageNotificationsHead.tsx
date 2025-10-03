@@ -4,7 +4,7 @@ import SectionTitle from "@/components/titles/SectionTitle";
 import Image from "next/image";
 import Modal from "@/components/modal/Modal";
 
-import styles from "./styles/page-notifications-head.module.css";
+import styles from "./styles/page-notifications-head.module.scss";
 
 export default function PageNotificationsHead() {
   const [isShowModalDelete, setIsShowModalDelete] = useState<boolean>(false);

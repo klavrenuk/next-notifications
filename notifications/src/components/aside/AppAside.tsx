@@ -5,7 +5,7 @@ import Image from 'next/image';
 import NavAside from '@/components/navigation/NavAside'
 import UserHeaderInfo from '@/components/user/UserHeaderInfo'
 
-import styles from './styles/aside.module.css'
+import styles from './styles/aside.module.scss'
 
 export default function AppAside() {
     return (
