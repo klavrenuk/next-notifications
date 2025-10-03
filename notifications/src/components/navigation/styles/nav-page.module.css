@@ -6,13 +6,19 @@
     margin-bottom: 16px;
 }
 
-.navPageItem {
+.navPageLink,
+.navPageLinkActive {
+    padding-bottom: 8px;
     font-size: 16px;
-    border-bottom: 4px solid color(--color-purple);
+    border-bottom: 4px solid transparent;
 
     &:hover,
-    &:active,
-    &.active {
+    &:active {
         font-weight: 700;
+        border-bottom: 4px solid var(--color-purple);
     }
+}
+
+.navPageLinkActive {
+    border-bottom: 4px solid var(--color-purple);
 }

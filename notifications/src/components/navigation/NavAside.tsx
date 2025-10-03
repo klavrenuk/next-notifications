@@ -1,5 +1,8 @@
 import type { Nav } from '@/app/types/nav';
+
 import Link from 'next/link';
+import Image from 'next/image';
+
 import styles from './styles/nav-aside.module.css';
 
 interface Props {
@@ -15,7 +18,7 @@ export default function NavAside({ list }: Props) {
           href={link.url}
           className={styles.link}
         >
-            <span>icon</span>
+            <Image src={link.icon} alt="" width={24} height={24} />
             <span>{link.name}</span>
             <span>noti</span>
         </Link>

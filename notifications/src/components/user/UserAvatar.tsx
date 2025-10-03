@@ -1,7 +1,5 @@
 import type { User } from "@/types/notifications";
 
-import Image from 'next/image';
-
 import styles from "./styles/user-avatar.module.css";
 
 interface Props {
@@ -9,8 +7,6 @@ interface Props {
 }
 
 export default function UserAvatar({ user }: Props) {
-  console.log("user", user);
-
   const avatarSrc = user.avatar || '/img/user-default.svg';
 
   return (

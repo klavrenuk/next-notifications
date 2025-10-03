@@ -4,46 +4,46 @@ export const appNavigation: Nav[] = [
   {
     url: '/news',
     name: 'Лента',
-    icon: 'news',
+    icon: '/icon/nav-news.svg',
   },
   {
     url: '/messages',
     name: 'Сообщения',
-    icon: 'messages',
+    icon: '/icon/nav-messages.svg',
   },
   {
     url: '/notifications',
     name: 'Уведомления',
-    icon: 'notifications',
+    icon: '/icon/nav-notifications.svg',
   },
   {
     url: '/followers',
     name: 'Подписчики',
-    icon: 'followers',
+    icon: '/icon/nav-followers.svg',
   },
   {
     url: '/shop',
     name: 'Магазин',
-    icon: 'shop',
+    icon: '/icon/nav-shop.svg',
   },
   {
     url: '/balance',
     name: 'Мой баланс',
-    icon: 'balance',
+    icon: '/icon/nav-balance.svg',
   },
   {
     url: '/marketing',
     name: 'Маркетинг',
-    icon: 'marketing',
+    icon: '/icon/nav-marketing.svg',
   },
   {
     url: '/schedule',
     name: 'График работ',
-    icon: 'schedule',
+    icon: '/icon/nav-graph.svg',
   },
   {
     url: '/profile',
     name: 'Профиль',
-    icon: 'profile',
+    icon: '/icon/nav-profile.svg',
   },
 ]
