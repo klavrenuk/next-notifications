@@ -18,10 +18,10 @@ export default function NotificationCard({ notification }: Props) {
       <div className={styles.blockLeft}>
         <UserAvatar user={notification.user} />
 
-        <div>
+        <div className={styles.infoBlock}>
           <div className={styles.userInfo}>
             <h6 className={styles.name}>{notification.user.name}</h6>
-            <p className={styles.description}>опубликовал новый пост, коллекцию спайстори</p>
+            <p className={styles.description}>{ notification.text }</p>
           </div>
           <div className={styles.time}>{formatRelativeTime(notification.created)}</div>
         </div>

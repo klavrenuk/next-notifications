@@ -10,7 +10,7 @@ export default function PageNotificationsHead() {
   const [isShowModalDelete, setIsShowModalDelete] = useState<boolean>(false);
 
   const showModalDelete = () => {
-    setIsShowModalDelete(true);
+    setIsShowModalDelete(false);
   };
 
   const modalAccept = () => {
