@@ -1,0 +1,19 @@
+.appHeaderMobile {
+  width: 100%;
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content:  space-between;
+  gap: 1rem;
+}
+
+.blockUser {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btnIcon {
+  height: 36px;
+  width: 36px;
+}

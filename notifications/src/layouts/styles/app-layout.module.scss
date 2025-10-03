@@ -4,3 +4,11 @@
     align-items: flex-start;
     height: 100%;
 }
+
+@media  all and (max-width: 1280px) {
+    .appLayout {
+        display: flex;
+        flex-direction: column;
+
+    }
+}

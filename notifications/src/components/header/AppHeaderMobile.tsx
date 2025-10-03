@@ -5,21 +5,38 @@ import UserHeaderInfo from '@/components/user/UserHeaderInfo'
 import styles from './styles/app-header-mobile.module.scss'
 
 export default function AppHeaderMobile() {
-  return (
-    <div>
-      App header Mobile
-      <UserHeaderInfo />
-      <div>
-        <button>add</button>
-        <button>
-          <Image
-            src={"/icon/icon-settings.svg"}
-            alt=""
-            height={36}
-            width={36}
-          />
-        </button>
-      </div>
-    </div>
-  );
+    return (
+        <div className={styles.appHeaderMobile}>
+            <div className={styles.blockUser}>
+                <button className={styles.btnIcon}>
+                    <Image
+                        src={"/icon/icon-burger.svg"}
+                        alt={""}
+                        height={36}
+                        width={36}
+                    />
+                </button>
+                <UserHeaderInfo/>
+            </div>
+
+            <div className={styles.control}>
+                <button className={styles.btnIcon}>
+                    <Image
+                        src={"/icon/icon-circle-plus.svg"}
+                        alt=""
+                        height={36}
+                        width={36}
+                    />
+                </button>
+                <button className={styles.btnIcon}>
+                    <Image
+                        src={"/icon/icon-settings.svg"}
+                        alt="Настройки"
+                        height={36}
+                        width={36}
+                    />
+                </button>
+            </div>
+        </div>
+    );
 }
