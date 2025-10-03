@@ -10,15 +10,9 @@ import AppLoader from "@/components/loader/AppLoader";
 import PageNotificationsHead from "@/components/page-notifications/PageNotificationsHead";
 
 import type { Nav } from "@/types/nav";
+import type { Notification } from "@/types/notifications";
 
 import styles from "@/styles/notification.module.scss";
-
-interface NotificationItem {
-  type: string;
-  text: string;
-  created: string;
-  user?: { name: string; avatar: string };
-}
 
 export default function Notifications() {
   const navList: Nav[] = [
@@ -27,7 +21,7 @@ export default function Notifications() {
     { url: "actions", name: "Действия" },
   ];
 
-  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeView, setActiveView] = useState(navList[0].url);
 
@@ -47,7 +41,7 @@ export default function Notifications() {
       console.error("Ошибка загрузки:", error);
 
     } finally {
-      //setLoading(false);
+      setLoading(false);
     }
   };
 
