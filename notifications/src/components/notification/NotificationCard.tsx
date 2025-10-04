@@ -14,30 +14,51 @@ import styles from "./styles/notification-card.module.scss";
 
 interface Props {
     notification: Notification;
+    isShowLink?: boolean
 }
 
-export default function NotificationCard({notification}: Props) {
+export default function NotificationCard({notification, isShowLink}: Props) {
     const isDesktop = useMediaQuery(mediaQueries.desktop);
 
     return (
         <div className={styles.notification}>
             <div className={styles.blockLeft}>
-                <UserAvatar user={notification.user}/>
+                {isShowLink ? (
+                    <Link
+                        className={`app-link`}
+                        href={{
+                            pathname: `/notifications/${notification?.user?.name || ''}`,
+                            query: {
+                                type: notification.type,
+                                target: notification.target_id,
+                            },
+                        }}
+                    >
+                        <UserAvatar user={notification.user} />
+                    </Link>
+                ) : (
+                    <UserAvatar user={notification.user} />
+                )}
 
                 <div className={styles.infoBlock}>
                     <div className={styles.userInfo}>
-                        <Link
-                            className={styles.name}
-                            href={{
-                                pathname: `/notifications/${notification?.user?.name}`,
-                                query: {
-                                    type: notification.type,
-                                    target: notification?.target_id,
-                                },
-                            }}
-                        >
-                            {notification?.user?.name}
-                        </Link>
+                        {isShowLink ? (
+                            <Link
+                                className={`${styles.name} app-link`}
+                                href={{
+                                    pathname: `/notifications/${notification?.user?.name || ''}`,
+                                    query: {
+                                        type: notification.type,
+                                        target: notification.target_id,
+                                    },
+                                }}
+                            >
+                                {notification?.user?.name}
+                            </Link>
+                        ) : (
+                            <h6 className={styles.name}>{notification?.user?.name}</h6>
+                        )}
+
                         <p className={styles.description}>{notification.text}</p>
                     </div>
                     <div className={styles.time}>{formatRelativeTime(notification.created)}</div>
@@ -46,7 +67,7 @@ export default function NotificationCard({notification}: Props) {
 
             <div className={styles.blockRight}>
                 {notification.type === 'subscription' && isDesktop && (
-                    <Subscription />
+                    <Subscription/>
                 )}
 
                 {notification.image && (

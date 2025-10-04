@@ -35,15 +35,19 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 a,
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--color-black);
+
+  &:hover, &:active {
+    color: var(--color-purple)
+  }
 }
 
 button,

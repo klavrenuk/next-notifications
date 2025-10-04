@@ -1,16 +1,19 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import {useState, useEffect} from 'react';
+import {useSearchParams} from 'next/navigation';
+
+import type { Notification } from "@/types/notifications";
 
 import Link from 'next/link';
 
 import PageSection from "@/components/page-section/PageSection";
 import AppHeader from '@/components/header/AppHeader';
 import AppLoader from "@/components/loader/AppLoader";
+import NotificationCard from "@/components/notification/NotificationCard";
 
 export default function NotificationGroup() {
-    const [data, setData] = useState([]);
+    const [notifications, setNotifications] = useState<Notification[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const searchParams = useSearchParams();
@@ -20,7 +23,7 @@ export default function NotificationGroup() {
 
     const fetchGroup = async () => {
         try {
-            if(!notifType || !targetId) {
+            if (!notifType || !targetId) {
                 return
             }
 
@@ -32,7 +35,7 @@ export default function NotificationGroup() {
             if (!res.ok) throw new Error("Ошибка");
             const data = await res.json();
 
-            setData(data.results || []);
+            setNotifications(data.results || []);
 
         } catch (error) {
             console.error("Ошибка загрузки:", error);
@@ -59,10 +62,21 @@ export default function NotificationGroup() {
     return (
         <PageSection header={notificationHeader}>
             <div>
-                {isLoading ? <AppLoader /> : <div>
-                    Inner
-                </div>}
+                {
+                    isLoading ? <AppLoader/> :
+                        <div>
+                            {
+                                notifications.map((notification) => (
+                                    <NotificationCard
+                                        notification={notification}
+                                        key={`${notification.type}-${notification.created}`}
+                                    />
+                    ))
+                }
             </div>
-        </PageSection>
-    );
+            }
+        </div>
+</PageSection>
+)
+    ;
 }
