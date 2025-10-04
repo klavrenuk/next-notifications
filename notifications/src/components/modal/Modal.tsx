@@ -9,13 +9,18 @@ interface ModalProps {
   isOpen: boolean;
   children: React.ReactNode;
   title?: string;
+  btnAcceptText?: string
   
   onClose: () => void;
   onAccept: () => void;
 }
 
-export default function Modal({ isOpen, onClose, children, title }: ModalProps) {
+export default function Modal({ isOpen, onClose, children, title, btnAcceptText}: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
+
+  const classesAccept = () => {
+    return `${styles.btn} ${btnAcceptText}`
+  }
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -43,7 +48,6 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
 
   return createPortal(
     <div className={styles.overlay} onClick={handleClickOutside} role="dialog" aria-modal="true">
-      Inner
       <div ref={modalRef} className={styles.content}>
         {title && (
           <div className={styles.header}>
@@ -54,6 +58,13 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
           </div>
         )}
         <div className={styles.body}>{children}</div>
+
+        <div className={styles.footer}>
+          <button className={"btn"}>Отменить</button>
+          <button className={"btn btn-primary"}>
+            {btnAcceptText || 'Удалить'}
+          </button>
+        </div>
       </div>
     </div>,
     document.body

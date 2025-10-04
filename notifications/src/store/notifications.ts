@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
 class NotificationsStore {
-    isShowModalDelete:boolean = false
+    isShowModalDelete:boolean = true
 
     constructor() {
         makeAutoObservable(this)

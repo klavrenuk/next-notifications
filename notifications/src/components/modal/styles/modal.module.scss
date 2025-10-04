@@ -15,7 +15,7 @@
   background: white;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  max-width: 90vw;
+  max-width: 460px;
   max-height: 90vh;
   overflow: auto;
   width: 100%;
@@ -57,3 +57,11 @@
 .body {
   padding: 20px;
 }
+
+.footer {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
