@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { observer } from 'mobx-react-lite';
 import { notificationsStore } from '@/store/notifications';
 
@@ -64,7 +64,7 @@ export default observer(function Notifications() {
 
   const handleUpdateView = (view: string) => {
     setActiveView(view);
-    fetchNotifications()
+
   };
 
   const showModalDelete = () => {
@@ -79,18 +79,32 @@ export default observer(function Notifications() {
       </AppHeader>
   )
 
+  const filteredNotifications = useMemo(() => {
+    switch (activeView) {
+      case 'general':
+        return notifications.filter(noti => noti.type === 'like' || noti.type === 'comment');
+      case 'actions':
+        return notifications.filter(noti => noti.type === 'repost' || noti.type === 'subscription');
+      case 'all':
+
+      default:
+        return notifications;
+    }
+
+  }, [activeView, notifications])
+
   return (
     <PageSection header={notificationHeader}>
       <NavPage list={navList} active={activeView} update={handleUpdateView} />
 
       {loading ? (
         <AppLoader />
-      ) : notifications.length > 0 ? (
+      ) : filteredNotifications.length > 0 ? (
         <div className={styles.list}>
-          {notifications.map((notification) => (
+          {filteredNotifications.map((notification) => (
             <NotificationCard
               notification={notification}
-              key={notification.created}
+              key={`${notification.type}-${notification.created}`}
             />
           ))}
         </div>

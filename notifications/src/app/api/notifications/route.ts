@@ -5,7 +5,7 @@ export async function GET() {
   try {
     const response = await axios.get('https://test-api.krascatalog.ru/notifications', {
       params: {
-        limit: 10
+        limit: 20
       }
     });
 
