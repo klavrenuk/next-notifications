@@ -37,7 +37,7 @@ export default observer(function Notifications() {
       setLoading(true)
 
       const res = await fetch("/api/notifications");
-      if (!res.ok) throw new Error("Ошибка сети");
+      if (!res.ok) throw new Error("Ошибка");
       const data = await res.json();
 
       setNotifications(data.results || []);

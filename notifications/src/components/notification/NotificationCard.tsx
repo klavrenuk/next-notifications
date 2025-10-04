@@ -3,6 +3,7 @@ import {useMediaQuery} from "@/hooks/useMediaQuery";
 import {mediaQueries} from "@/constants/app";
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import type {Notification} from "@/types/notifications";
 
@@ -25,7 +26,18 @@ export default function NotificationCard({notification}: Props) {
 
                 <div className={styles.infoBlock}>
                     <div className={styles.userInfo}>
-                        <h6 className={styles.name}>{notification.user.name}</h6>
+                        <Link
+                            className={styles.name}
+                            href={{
+                                pathname: `/notifications/${notification?.user?.name}`,
+                                query: {
+                                    type: notification.type,
+                                    target: notification?.target_id,
+                                },
+                            }}
+                        >
+                            {notification?.user?.name}
+                        </Link>
                         <p className={styles.description}>{notification.text}</p>
                     </div>
                     <div className={styles.time}>{formatRelativeTime(notification.created)}</div>
