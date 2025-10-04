@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
 import styles from './styles/modal.module.scss'
 
 interface ModalProps {
   isOpen: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   title?: string;
   btnAcceptText?: string
   

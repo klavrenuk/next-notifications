@@ -50,13 +50,7 @@ export default function NotificationGroup() {
     }, []);
 
     const notificationHeader = (
-        <AppHeader title={"Уведомления"}>
-            <Link
-                href={'/notifications'}
-            >
-                arrow back
-            </Link>
-        </AppHeader>
+        <AppHeader title={"Уведомления"} urlBack={"/notifications"} />
     )
 
     return (

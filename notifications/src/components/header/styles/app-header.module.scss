@@ -1,6 +1,18 @@
 .appHeader {
-    padding: 16px;
+    padding: 16px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.blockTop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+@media all and (max-width: 1280px) {
+    .appHeader {
+        padding: 16px 0;
+    }
 }

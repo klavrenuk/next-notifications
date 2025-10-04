@@ -105,6 +105,7 @@ export default observer(function Notifications() {
             <NotificationCard
               notification={notification}
               key={`${notification.type}-${notification.created}`}
+              isShowLink={true}
             />
           ))}
         </div>
