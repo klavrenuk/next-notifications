@@ -1,4 +1,4 @@
-export type NotificationType = 'repost' | 'like' | 'comment';
+export type NotificationType = 'repost' | 'like' | 'comment' | 'subscription';
 
 export interface Stories {
   total_count: number;
@@ -30,5 +30,5 @@ export interface NotificationsResponse {
   total: number;
   limit: number;
   offset: number;
-  results: NotificationItem[];
+  results: Notification[];
 }

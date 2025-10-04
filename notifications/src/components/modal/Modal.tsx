@@ -15,7 +15,7 @@ interface ModalProps {
   onAccept: () => void;
 }
 
-export default function Modal({ isOpen, onClose, children, title, btnAcceptText}: ModalProps) {
+export default function Modal({ isOpen, onClose, children, title, btnAcceptText, onAccept}: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
 
   const classesAccept = () => {
@@ -60,8 +60,8 @@ export default function Modal({ isOpen, onClose, children, title, btnAcceptText}
         <div className={styles.body}>{children}</div>
 
         <div className={styles.footer}>
-          <button className={"btn"}>Отменить</button>
-          <button className={"btn btn-primary"}>
+          <button className={"btn btn-lg"} onClick={onClose}>Отменить</button>
+          <button className={"btn btn-primary btn-lg"} onClick={onAccept}>
             {btnAcceptText || 'Удалить'}
           </button>
         </div>
