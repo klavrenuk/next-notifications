@@ -7,6 +7,7 @@ import Image from 'next/image';
 import type {Notification} from "@/types/notifications";
 
 import UserAvatar from "@/components/user/UserAvatar";
+import Subscription from "@/components/subscription/Subscription";
 
 import styles from "./styles/notification-card.module.scss";
 
@@ -15,7 +16,6 @@ interface Props {
 }
 
 export default function NotificationCard({notification}: Props) {
-    const isMobile = useMediaQuery(mediaQueries.mobile);
     const isDesktop = useMediaQuery(mediaQueries.desktop);
 
     return (
@@ -34,9 +34,7 @@ export default function NotificationCard({notification}: Props) {
 
             <div className={styles.blockRight}>
                 {notification.type === 'subscription' && isDesktop && (
-                    <button className="btn btn-black" type="button">
-                        Подписаться
-                    </button>
+                    <Subscription />
                 )}
 
                 {notification.image && (
