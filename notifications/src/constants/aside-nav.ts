@@ -1,4 +1,4 @@
-import type { Nav } from '@/app/types/nav';
+import type { Nav } from '@/types/nav'
 
 export const appNavigation: Nav[] = [
   {

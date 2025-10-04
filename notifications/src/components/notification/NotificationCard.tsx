@@ -1,4 +1,6 @@
 import {formatRelativeTime} from '@/utils/date'
+import {useMediaQuery} from "@/hooks/useMediaQuery";
+import {mediaQueries} from "@/constants/app";
 
 import Image from 'next/image';
 
@@ -13,6 +15,9 @@ interface Props {
 }
 
 export default function NotificationCard({notification}: Props) {
+    const isMobile = useMediaQuery(mediaQueries.mobile);
+    const isDesktop = useMediaQuery(mediaQueries.desktop);
+
     return (
         <div className={styles.notification}>
             <div className={styles.blockLeft}>
@@ -28,7 +33,7 @@ export default function NotificationCard({notification}: Props) {
             </div>
 
             <div className={styles.blockRight}>
-                {notification.type === 'subscription' && (
+                {notification.type === 'subscription' && isDesktop && (
                     <button className="btn btn-black" type="button">
                         Подписаться
                     </button>
