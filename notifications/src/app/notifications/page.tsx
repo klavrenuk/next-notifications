@@ -4,13 +4,15 @@ import { useEffect, useState } from "react";
 import { observer } from 'mobx-react-lite';
 import { notificationsStore } from '@/store/notifications';
 
+import Image from "next/image";
+
 import NavPage from "@/components/navigation/NavPage";
 import Modal from "@/components/modal/Modal";
 import Empty from "@/components/empty/Empty";
 import PageSection from "@/components/page-section/PageSection";
 import NotificationCard from "@/components/notification/NotificationCard";
 import AppLoader from "@/components/loader/AppLoader";
-import PageNotificationsHead from "@/components/page-notifications/PageNotificationsHead";
+import AppHeader from "@/components/header/AppHeader";
 
 import type { Nav } from "@/types/nav";
 import type { Notification } from "@/types/notifications";
@@ -65,8 +67,20 @@ export default observer(function Notifications() {
     fetchNotifications()
   };
 
+  const showModalDelete = () => {
+    notificationsStore.showModalDelete()
+  }
+
+  const notificationHeader = (
+      <AppHeader title={"Уведомления"}>
+        <button onClick={showModalDelete}>
+          <Image src={"/icon/icon-dots.svg"} alt="" height={20} width={20} />
+        </button>
+      </AppHeader>
+  )
+
   return (
-    <PageSection header={<PageNotificationsHead />}>
+    <PageSection header={notificationHeader}>
       <NavPage list={navList} active={activeView} update={handleUpdateView} />
 
       {loading ? (
@@ -90,7 +104,9 @@ export default observer(function Notifications() {
           onAccept={handleModalAccept}
           onClose={handleModalClose}
       >
-        <div>remove Modal</div>
+        <div>
+          Вы уверены?
+        </div>
       </Modal>
     </PageSection>
   );
