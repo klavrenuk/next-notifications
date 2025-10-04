@@ -3,8 +3,8 @@ import AppHeader from '@/components/header/AppHeader'
 
 export default function NotFoundPage() {
     return (
-        <PageSection>
-            <AppHeader title={"Стараница не найдена"} />
+        <PageSection header={<AppHeader title={"Стараница не найдена"} />}>
+            <div></div>
         </PageSection>
     )
 }
