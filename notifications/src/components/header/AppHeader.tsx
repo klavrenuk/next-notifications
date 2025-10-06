@@ -19,9 +19,10 @@ export default function AppHeader({title, children, urlBack}: Props) {
             <div className={styles.blockTop}>
                 { urlBack &&
                     <Link
+                        className={styles.blockTopLink}
                         href={urlBack}
                     >
-                        <Image src={"/icon/icon-arrow.svg"} alt="" height={36} width={36} />
+                        <Image src={"/icon/icon-arrow.svg"} alt="" height={30} width={30} />
                     </Link>
                 }
                 <SectionTitle text={title}/>
